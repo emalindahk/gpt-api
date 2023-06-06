@@ -37,12 +37,15 @@ app.post("/questions", async (req, res) => {
     ],
   });
 
-  res.send(response.data.choices[0].message.content);
+  const responseData = response.data.choices[0].message.content;
+  const jsonResponse = JSON.stringify(responseData);
+
+  res.send(jsonResponse);
 });
 
-const port = 8000;
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
 
 module.exports = app;
