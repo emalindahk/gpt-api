@@ -13,6 +13,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Hey this is my API 🥳");
+});
+
 app.post("/questions", async (req, res) => {
   const { category, difficulty } = req.body;
 
@@ -32,7 +36,7 @@ app.post("/questions", async (req, res) => {
       },
     ],
   });
-  
+
   res.send(response.data.choices[0].message.content);
 });
 
