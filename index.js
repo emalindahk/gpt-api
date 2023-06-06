@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Hey this is my API 🥳");
+  res.send("Hey this is my API  🥳");
 });
 
 app.post("/questions", async (req, res) => {
@@ -44,3 +44,5 @@ const port = 8000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+module.exports = app;
