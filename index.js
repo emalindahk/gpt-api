@@ -40,7 +40,7 @@ app.post("/questions", async (req, res) => {
   const responseData = response.data.choices[0].message.content;
   const jsonResponse = JSON.stringify(responseData);
 
-  res.send(jsonResponse);
+  res.json(jsonResponse);
 });
 
 const PORT = process.env.PORT || 8000;
