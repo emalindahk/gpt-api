@@ -32,15 +32,14 @@ app.post("/questions", async (req, res) => {
       },
       {
         role: "user",
-        content: `Generate 10 ${category} questions and the correct answer.Generate four options for each question.Make sure the right answer is one of the four options and not a specific option.`,
+        content: `Generate 10 questions of ${difficulty} difficulty level in the category of ${category}. Each question should have four options (A, B, C, D) and the correct answer should be indicated at different options. Use the format:\n'1. Question?\nA) Option A\nB) Option B\nC) Option C\nD) Option D\nAnswer: Correct Option'.`,
       },
     ],
   });
 
   const responseData = response.data.choices[0].message.content;
-  const jsonResponse = JSON.stringify(responseData);
 
-  res.json(jsonResponse);
+  res.json(responseData);
 });
 
 const PORT = process.env.PORT || 8000;
