@@ -32,7 +32,7 @@ app.post("/questions", async (req, res) => {
       },
       {
         role: "user",
-        content: `Generate 10 questions of ${difficulty} difficulty level in the category of ${category}. Each question should have four options (A, B, C, D) and the correct answer should be indicated at different options. Use the format:\n'1. Question?\nA) Option A\nB) Option B\nC) Option C\nD) Option D\nAnswer: Correct Option'.`,
+        content: `Generate 10 questions of ${difficulty} difficulty level in the category of ${category}. Each question should have four options (A, B, C, D) and the correct answer should be indicated at different options. Use the format:\n'1. Question?\nA) Option A\nB) Option B\nC) Option C\nD) Option D\nAnswer: Correct Option and Answer'.`,
       },
     ],
   });
