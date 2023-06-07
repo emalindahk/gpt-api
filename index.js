@@ -32,7 +32,7 @@ app.post("/questions", async (req, res) => {
       },
       {
         role: "user",
-        content: `Generate 10 ${category} questions and the correct answer.Generate four options for each question.`,
+        content: `Generate 10 ${category} questions and the correct answer.Generate four options for each question.Make sure the right answer is one of the four options and not a specific option.`,
       },
     ],
   });
